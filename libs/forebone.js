@@ -3,11 +3,11 @@
 //
 
 (function() {
-
+    "use strict";
 //reference to global object (window in browser)
     var _global = this;
     //define private Firebone namespace
-    Forebone = _global.Forebone = {};
+    var Forebone = _global.Forebone = {};
     /**
      *extend method to aplying Forebone's modules
      *
