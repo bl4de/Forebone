@@ -57,6 +57,19 @@
                 _clone[_prop] = this[_prop];
             }//for
             return _clone;
+        },
+        /*
+         * returns random from 0 to max
+         * 
+         * @param {type} max
+         * @returns {@exp;Math@call;floor}
+         */
+        random: function(max) {
+            if (!max) {
+                //just in case...
+                max = 255;
+            }
+            return Math.floor(Math.random() * max);
         }
     };
     //define Firebone.Event namepsace
