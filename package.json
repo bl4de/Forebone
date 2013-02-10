@@ -1,0 +1,16 @@
+{
+    "name": "Forebone",
+    "version": "1.0",
+    "author": "bl4de <bloorq@gmail.com>",
+    "description": "Multipurpose library for various things",
+    "main": "./lib/forebone.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bl4de/Forebone.git"
+    },
+    "keywords": [
+        "forebone", "canvas", "utils"
+    ],
+    "author": "Aaron Franks",
+    "license": "MIT",
+}
