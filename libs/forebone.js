@@ -36,7 +36,7 @@
             var _prop;
             /* compare properties */
             for (_prop in this) {
-                if (!(this[_prop] === obj[_prop])) {
+                if (this[_prop] !== obj[_prop]) {
                     /* returns false on first not equal properties, */
                     /*  no further comparision is needed */
                     return false;
@@ -53,7 +53,7 @@
         clone: function() {
             var _prop, _clone = {};
             /* compare properties */
-            for (var _prop in this) {
+            for (_prop in this) {
                 _clone[_prop] = this[_prop];
             }/* for */
             return _clone;
@@ -110,7 +110,7 @@
          * @returns {undefined}
          */
         initialize: function(elementId) {
-            var canvas = document.getElementById(elementId);
+            var canvas = _global.document.getElementById(elementId);
             if (!this.context && canvas.getContext) {
                 this.context = canvas.getContext('2d');
                 /*  creating ImageData for pixel manipulating */
