@@ -1,12 +1,12 @@
-// based mostly on Backbone.js source code and idea :)
-// But there were many other JavaScript libraries, which I inspired to :)
-//
+/*  based mostly on Backbone.js source code and idea :) */
+/*  But there were many other JavaScript libraries, which I inspired to :) */
+
 
 (function() {
     "use strict";
-//reference to global object (window in browser)
+    /* reference to global object (window in browser) */
     var _global = this;
-    //define private Firebone namespace
+    /* define private Firebone namespace */
     var Forebone = _global.Forebone = {};
     /**
      *extend method to aplying Forebone's modules
@@ -17,7 +17,7 @@
         var _prop;
         for (_prop in parent) {
             this[_prop] = parent[_prop];
-        }//for
+        }/* for */
         return this;
     };
     /**
@@ -30,19 +30,19 @@
          * are equal
          */
         equal: function(obj) {
-//must be the same obj, so returns true immediately
+            /* must be the same obj, so returns true immediately */
             if (this === obj)
                 return true;
             var _prop;
-            //compare properties
+            /* compare properties */
             for (_prop in this) {
                 if (!(this[_prop] === obj[_prop])) {
-//returns false on first not equal properties,
-// no further comparision is needed
+                    /* returns false on first not equal properties, */
+                    /*  no further comparision is needed */
                     return false;
                 }
-            }//for
-//finally, they are identical, but not the same obj :P
+            }/* for */
+            /* finally, they are identical, but not the same obj :P */
             return true;
         },
         /**
@@ -52,27 +52,27 @@
          */
         clone: function() {
             var _prop, _clone = {};
-            //compare properties
+            /* compare properties */
             for (var _prop in this) {
                 _clone[_prop] = this[_prop];
-            }//for
+            }/* for */
             return _clone;
         },
         /*
          * returns random from 0 to max
-         * 
+         *
          * @param {type} max
          * @returns {@exp;Math@call;floor}
          */
         random: function(max) {
             if (!max) {
-                //just in case...
+                /* just in case... */
                 max = 255;
             }
             return Math.floor(Math.random() * max);
         }
     };
-    //define Firebone.Event namepsace
+    /* define Firebone.Event namepsace */
     Forebone.Event = {
         /**
          * attach() method
@@ -80,12 +80,12 @@
          * callback - event callback
          */
         attach: function(trigger, callback) {
-// define new namespace obj.events
+            /*  define new namespace obj.events */
             this.events = this.events || {};
-            // define new property (function) in obj.events
+            /*  define new property (function) in obj.events */
             if (typeof callback === "function") {
                 this.events[trigger] = callback;
-            }//if
+            }/* if */
         },
         /**
          * Fire event
@@ -94,7 +94,7 @@
             if (typeof(args) == "string") {
                 this.events[trigger].call(this, args);
                 return;
-            }//if
+            }/* if */
             this.events[trigger].apply(this, (args || []));
         }
     };
@@ -113,7 +113,7 @@
             var canvas = document.getElementById(elementId);
             if (!this.context && canvas.getContext) {
                 this.context = canvas.getContext('2d');
-                // creating ImageData for pixel manipulating
+                /*  creating ImageData for pixel manipulating */
                 this.image = this.context.createImageData(canvas.width, canvas.height);
                 this.height = canvas.height;
                 this.width = canvas.width;
@@ -128,7 +128,7 @@
             if (r >= 0 && r < 256 && g >= 0 && g < 256 && b >= 0 && b < 256) {
                 this.context.fillStyle = (!a) ? "rgb(" + r + "," + g + "," + b + ")" : "rgba(" + r + "," + g + "," + b + "," + a + ")";
             } else {
-// some default color
+                /*  some default color */
                 this.context.fillStyle = "rgb(10,10,10)";
             }
         },
@@ -141,7 +141,7 @@
             if (x > 0 && y > 0) {
                 this.context.moveTo(x, y);
             } else {
-//default behaviour - move to 0,0
+                /* default behaviour - move to 0,0 */
                 this.context.moveTo(0, 0);
             }
         },
@@ -152,7 +152,7 @@
             if (x > 0 && y > 0) {
                 this.context.lineTo(x, y);
             } else {
-//default behaviour - draws line to 0,0
+                /* default behaviour - draws line to 0,0 */
                 this.context.lineTo(0, 0);
             }
             this.context.fill();
@@ -189,7 +189,7 @@
                 for (i = 1; i < points.length; i++) {
                     this.context.lineTo(points[i][0], points[i][1]);
                 }
-            }//if
+            }/* if */
             this.context.fill();
         },
         /*
@@ -206,7 +206,7 @@
                 this.context.stroke();
             }
         },
-        // ImageData manipulation functions
+        /*  ImageData manipulation functions */
         /*
          * single pixel manipulation function - start
          */
@@ -223,6 +223,6 @@
         render: function() {
             this.context.putImageData(this.image, 0, 0);
         }
-        // ImageData manipulation functions - end
+        /*  ImageData manipulation functions - end */
     };
 }).call(this);
