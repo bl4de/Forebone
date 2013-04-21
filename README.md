@@ -16,6 +16,10 @@ Modules
 
 All modules are SID (still-in-development) now, there isn't any ready-to-go version :)
 
+
+In the nearest future I'll add a module called Algorythm - implementations of some of the most popular algorythms used in various programs (sorting, searching, binary-trees and so on).
+
+
 ToDo
 ----
 
