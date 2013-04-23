@@ -1,16 +1,19 @@
 {
-    "name": "Forebone",
-    "version": "1.0",
-    "author": "bl4de <bloorq@gmail.com>",
-    "description": "Multipurpose library for various things",
-    "main": "./lib/forebone.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/bl4de/Forebone.git"
-    },
-    "keywords": [
-        "forebone", "canvas", "utils"
-    ],
-    "author": "Rafal Janicki",
-    "license": "MIT",
+  "name": "Forebone",
+  "version": "0.0.1",
+  "description": "JavaScript multi purpose library",
+  "main": "lib/forebone.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bl4de/Forebone.git"
+  },
+  "author": "Rafal Janicki",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.0"
+  }
 }
