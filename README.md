@@ -7,18 +7,12 @@ This is my JavaScript polygon, feel free to use it as You want to :)
 Build
 -----
 
-``
+```
 $ git clone git@github.com:bl4de/Forebone.git
-``
-``
 $ cd Forebone
-``
-``
 $ npm install
-``
-``
 $ grunt
-``
+```
 
 In dist/ folder You'll find forebone.min.js
 
