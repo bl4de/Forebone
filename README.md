@@ -33,18 +33,21 @@ Modules
 * Forebone.User - handles users accounts
 * Forebone.Event - my implementation os Sub/Pub and/or Observer pattern
 * Forebone.Canvas - simple wrappers for native Canvas HTML5 API
+* Forebone.Window - wrapper for BOM objects
+* Forebone.Performance - debug lib based on Performance API 
+	(performance.timing and performance.memory)
 
 All modules are SID (still-in-development) now, there isn't any ready-to-go version :)
 
-
-In the nearest future I'll add a module called Algorythm - implementations of some of the most popular algorythms used in various programs (sorting, searching, binary-trees and so on).
+In the nearest future I'll add a module called Algorythm - implementations of some 
+of the most popular algorythms used in various programs (sorting, searching, binary-trees and so on).
 
 
 ToDo
 ----
 
 * tests - QUnit and Jasmine test suites
-* simple build system, based on Grunt.js
+* simple build system, based on Grunt.js 
 * AMD-module version for projects based on Require.js
 * some more advanced examples
 * documentation (in .md format)
