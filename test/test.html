@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Refactored date examples</title>
+ 
+  <link rel="stylesheet" href="../qunit/qunit.css">
+  <script src="../qunit/qunit.js"></script>
+
+  <script src="../lib/forebone.js"></script>
+ 
+  <script>
+  test("Check Forebone.Window instance", function() {
+        var obj = Forebone.Window;
+        equal(typeof obj, "object");
+  });
+  
+  test("Check Forebone.Util instance", function() {
+        var obj = Forebone.Util;
+        equal(typeof obj, "object");
+  });
+
+  test("Check Forebone.Ajax instance", function() {
+        var obj = Forebone.Ajax;
+        equal(typeof obj, "object");
+  });
+  </script>
+</head>
+<body>
+ 
+<div id="qunit"></div>
+ 
+</body>
+</html>
