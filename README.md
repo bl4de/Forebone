@@ -18,7 +18,28 @@ In dist/ folder You'll find forebone.min.js
 
 Tests
 -----
-TBD
+
+Unit tests are Qunit.js. You can run tests by Grunt task:
+
+```
+$ grunt test
+```
+
+Sample result:
+```
+Running "jshint:files" (jshint) task
+>> 2 files lint free.
+
+Running "qunit:files" (qunit) task
+Testing test/test.html...OK
+>> 3 assertions passed (48ms)
+
+Done, without errors.
+
+```
+
+Files with tests located in test/ directory.
+
 
 Documentation
 -------------
