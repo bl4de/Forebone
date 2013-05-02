@@ -67,7 +67,7 @@ of the most popular algorythms used in various programs (sorting, searching, bin
 ToDo
 ----
 
-* tests - QUnit and Jasmine test suites
+* tests - QUnit and Jasmine test suites                 [Qunit in progress, Jasmine TBD]
 * simple build system, based on Grunt.js 
 * AMD-module version for projects based on Require.js
 * some more advanced examples
