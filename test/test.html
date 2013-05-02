@@ -5,6 +5,12 @@
       <title>Forebone.js test suite</title>
      
       <link rel="stylesheet" href="../qunit/qunit.css">
+    </head>
+    <body>
+     
+    <div id="qunit"></div>
+    <div class="testdiv"></div>
+     
       <script src="../qunit/qunit.js"></script>
 
       <script src="../lib/forebone.js"></script>
@@ -45,6 +51,11 @@
             equal(typeof obj, "object");
       });
       
+      test("Check Forebone.Dom instance", function() {
+            var obj = Forebone.Dom;
+            equal(typeof obj, "object");
+      });
+
       test("Forebone.Dater test suite", function() {
         var obj = Forebone.Dater;
         obj.createDate(1);
@@ -53,14 +64,18 @@
         // default date formatter day month year
         obj.formatDate();
         equal(obj.showDate(), "1 0 1970");
+
+      });
+
+      test("Forebone.Dom test suite", function() {
+        var obj = Forebone.Dom;
         
+        // find DOM node
+        var elem = obj.find('testdiv');
+        equal( typeof elem.style, "object");
+
       });
 
       </script>
-    </head>
-    <body>
-     
-    <div id="qunit"></div>
-     
     </body>
     </html>

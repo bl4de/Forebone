@@ -49,6 +49,7 @@ Modules
 -------
 
 * Forebone.Util - misc functions (equal(), clone())
+* Forebone.Dom - misc functions for basic DOM manipulation
 * Forebone.Ajax - async communication with servers
 * Forebone.Dater - misc functions for manipulate and fromat date/time input/output
 * Forebone.User - handles users accounts

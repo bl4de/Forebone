@@ -3,7 +3,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+                banner: '/*! <%= pkg.name %> build <%= grunt.template.today("dd-mm-yyyy HH:mm") %> */\n'
             },
             dist: {
                 src: 'lib/forebone.js',

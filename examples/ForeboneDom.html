@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Forebone.Dom example</title>
+        <script src="../lib/forebone.js"></script>
+    </head>
+    <body>
+        <div class="somediv">
+            Some div
+        </div>
+
+
+        <script>
+            var $ = Forebone.Dom;
+            var somediv = $.find('somediv');
+
+            console.log(typeof somediv.style);
+
+            somediv.style.border = "1px solid #111";
+        </script>
+    </body>
+</html>
