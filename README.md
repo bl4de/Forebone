@@ -55,6 +55,7 @@ Modules
 * Forebone.User - handles users accounts
 * Forebone.Event - my implementation os Sub/Pub and/or Observer pattern
 * Forebone.Canvas - simple wrappers for native Canvas HTML5 API
+* Forebone.Media - getUserMedia wrapper
 * Forebone.Window - wrapper for BOM objects
 * Forebone.Performance - debug lib based on Performance API 
 	(performance.timing and performance.memory)
