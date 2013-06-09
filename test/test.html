@@ -10,6 +10,7 @@
      
     <div id="qunit"></div>
     <div class="testdiv"></div>
+    <div class="anothertestdiv"></div>
      
       <script src="../qunit/qunit.js"></script>
 
@@ -73,6 +74,16 @@
         // find DOM node
         var elem = obj.find('testdiv');
         equal( typeof elem.style, "object");
+
+        // add new attribute to DOM node
+        var testAttr = "testAttrVal";
+        obj.set(elem, "testattr", "testAttrVal");
+        var _testElem = document.querySelector(".testdiv");
+
+        equal( _testElem.getAttribute("testattr"), testAttr);
+
+        // get new property from DOM node
+        equal( obj.get(elem, "testattr"), testAttr);
 
       });
 

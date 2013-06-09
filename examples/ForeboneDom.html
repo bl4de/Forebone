@@ -3,20 +3,59 @@
         <meta charset="utf-8">
         <title>Forebone.Dom example</title>
         <script src="../lib/forebone.js"></script>
+        <style type="text/css">
+        * {
+            font-family: sans-serif;
+            font-size: 6vh;
+        }
+
+        .red {
+            color: #fa0000;
+        }
+
+        .blue {
+            color: #0000fa;
+        }
+        </style>
     </head>
     <body>
         <div class="somediv">
             Some div
         </div>
 
+        <div class="anotherdiv">
+            Some another DIV - click me to toggle color!
+        </div>
+
 
         <script>
             var $ = Forebone.Dom;
+            
+            // find element DIV class="somediv" and set attribute ID="myNewDiv"
             var somediv = $.find('somediv');
+            $.set(somediv, "id", "myNewDiv");
+
+            // as above, but in one line
+            $.set("anotherdiv", "id", "someAnotherDiv");
 
             console.log(typeof somediv.style);
 
+            // CSS manipulating: add class
             somediv.style.border = "1px solid #111";
+
+            // CSS addClass
+            $.addClass("somediv", "red");
+
+            // CSS onClick toggle class
+            $.addClass("anotherdiv", "blue");
+            $.on("anotherdiv", "click", function() {
+                // here 'this' == DIV class="anotherdiv", so:
+                this.classList.toggle("blue");
+
+                //...or by Forebone.Dom.toggleClass:
+                $.toggleClass("anotherdiv", "red");
+            });
+
         </script>
     </body>
 </html>
