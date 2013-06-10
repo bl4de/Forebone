@@ -2,7 +2,10 @@
     <head>
         <meta charset="utf-8">
         <title>Forebone.Dom example</title>
-        <script src="../dist/forebone.min.js"></script>
+        <!-- // <script src="../dist/forebone.min.js"></script> -->
+
+        <!-- for develop mode only -->
+        <script src="../lib/forebone.js"></script>
         <style type="text/css">
         * {
             font-family: sans-serif;
@@ -32,11 +35,11 @@
             var $ = Forebone.Dom;
             
             // find element DIV class="somediv" and set attribute ID="myNewDiv"
-            var somediv = $.find('somediv');
+            var somediv = $.find('.somediv');
             $.set(somediv, "id", "myNewDiv");
 
             // as above, but in one line
-            $.set("anotherdiv", "id", "someAnotherDiv");
+            $.set(".anotherdiv", "id", "someAnotherDiv");
 
             // raw CSS manipulating: add border
             somediv.style.border = "1px solid #111";
@@ -53,6 +56,11 @@
 
                 //...or by Forebone.Dom.toggleClass:
                 $.toggleClass("anotherdiv", "red");
+            });
+
+            // change background of all divs
+            $.forEach('div', function(item) { 
+                item.style.backgroundColor = "#ce4fa2";
             });
 
         </script>
