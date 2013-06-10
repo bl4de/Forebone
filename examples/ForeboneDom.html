@@ -22,15 +22,15 @@
         </style>
     </head>
     <body>
-        <div class="somediv">
+        <div class="somediv findme">
             Some div
         </div>
 
         <ul class="testlist">
-            <li class="odd">test 1</li>
+            <li class="odd findme">test 1</li>
             <li>test 2</li>
             <li class="odd">test 3</li>
-            <li>test 4</li>
+            <li class="findme">test 4</li>
             <li class="odd">test 5</li>
         </ul>
         <div class="anotherdiv">
@@ -70,7 +70,12 @@
             $.forEach('ul.testlist>li.odd', function(item) { 
                 item.style.backgroundColor = "#ce4fad";
             });
-
+            
+            //find all elements with className = "findme"
+            var founded = $.findByClass("findme");
+            console.log(founded.length);
+            console.log(founded);
+            
         </script>
     </body>
 </html>
