@@ -26,6 +26,13 @@
             Some div
         </div>
 
+        <ul class="testlist">
+            <li class="odd">test 1</li>
+            <li>test 2</li>
+            <li class="odd">test 3</li>
+            <li>test 4</li>
+            <li class="odd">test 5</li>
+        </ul>
         <div class="anotherdiv">
             Some another DIV - click me to toggle color!
         </div>
@@ -33,6 +40,13 @@
 
         <script>
             var $ = Forebone.Dom;
+            
+            function changeColor() {
+                // here 'this' == DIV class="anotherdiv", so:
+                this.classList.toggle("blue");
+                //...or by Forebone.Dom.toggleClass:
+                $.toggleClass(".anotherdiv", "red");
+            }
             
             // find element DIV class="somediv" and set attribute ID="myNewDiv"
             var somediv = $.find('.somediv');
@@ -46,21 +60,15 @@
 
 
             // CSS addClass
-            $.addClass("somediv", "red");
+            $.addClass(".somediv", "red");
 
             // CSS onClick toggle class
-            $.addClass("anotherdiv", "blue");
-            $.on("anotherdiv", "click", function() {
-                // here 'this' == DIV class="anotherdiv", so:
-                this.classList.toggle("blue");
-
-                //...or by Forebone.Dom.toggleClass:
-                $.toggleClass("anotherdiv", "red");
-            });
+            $.addClass(".anotherdiv", "blue");
+            $.on(".anotherdiv", "click", changeColor);
 
             // change background of all divs
-            $.forEach('div', function(item) { 
-                item.style.backgroundColor = "#ce4fa2";
+            $.forEach('ul.testlist>li.odd', function(item) { 
+                item.style.backgroundColor = "#ce4fad";
             });
 
         </script>
