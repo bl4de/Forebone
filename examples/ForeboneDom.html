@@ -66,6 +66,10 @@
             $.addClass(".anotherdiv", "blue");
             $.on(".anotherdiv", "click", changeColor);
 
+            //check if contains class
+            console.log($.containClass(".somediv", "red"));
+            console.log($.containClass(".somediv", "green"));
+                
             // change background of all divs
             $.forEach('ul.testlist>li.odd', function(item) { 
                 item.style.backgroundColor = "#ce4fad";
