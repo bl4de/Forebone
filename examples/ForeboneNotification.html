@@ -1,0 +1,19 @@
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Forebone.Media example</title>
+        <script src="../dist/forebone.min.js"></script> 
+    </head>
+    
+    <body>
+        <input type="button" value="Show Notification" onClick="fnShow();">
+        <script>
+            function fnShow() {
+                var Msg = Forebone.Notification;
+                Msg.show("test notification");
+            }
+        </script>
+    </body>
+
+</html>
