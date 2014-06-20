@@ -1,5 +1,6 @@
-dist/*
-.DS_Store/*
-nbproject/*
-node_modules/*
+dist
+.DS_Store
+nbproject
+.idea
+node_modules
 
