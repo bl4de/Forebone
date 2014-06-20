@@ -1,43 +1,43 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Forebone.Canvas example</title>
-        <script src="../lib/forebone.js"></script>
-    </head>
-    <body>
-        <canvas id="mandlebrot" width="320" height="200"></canvas>
-        <script>
+<head>
+    <meta charset="utf-8">
+    <title>Forebone.Canvas example</title>
+    <script src="../lib/forebone.js"></script>
+</head>
+<body>
+<canvas id="mandlebrot" width="320" height="200"></canvas>
+<script>
 
 
-            function mandlebrot(x, y) {
-                x = 2.5 * (x / Canvas.width - 0.5);
-                y = 2 * (y / Canvas.height - 0.5);
-                var x0 = x;
-                var y0 = y;
+    function mandlebrot(x, y) {
+        x = 2.5 * (x / Canvas.width - 0.5);
+        y = 2 * (y / Canvas.height - 0.5);
+        var x0 = x;
+        var y0 = y;
 
-                var iteration = 0;
-                var max_iteration = 100;
+        var iteration = 0;
+        var max_iteration = 100;
 
-                while (x * x + y * y <= 4 && iteration < max_iteration) {
-                    var xtemp = x * x - y * y + x0;
-                    y = 2 * x * y + y0;
-                    x = xtemp;
-                    iteration++;
-                }
-                return Math.round(255 * iteration / max_iteration);
-            }
+        while (x * x + y * y <= 4 && iteration < max_iteration) {
+            var xtemp = x * x - y * y + x0;
+            y = 2 * x * y + y0;
+            x = xtemp;
+            iteration++;
+        }
+        return Math.round(255 * iteration / max_iteration);
+    }
 
-            var Canvas = Forebone.Canvas;
-            Canvas.initialize('mandlebrot');
+    var Canvas = Forebone.Canvas;
+    Canvas.initialize('mandlebrot');
 
-            for (var x = 0; x < Canvas.width; x++) {
-                for (var y = 0; y < Canvas.height; y++) {
-                    var color = mandlebrot(x, y);
-                    Canvas.pixel(x, y, color, color, color, 255);
-                }
-            }
+    for (var x = 0; x < Canvas.width; x++) {
+        for (var y = 0; y < Canvas.height; y++) {
+            var color = mandlebrot(x, y);
+            Canvas.pixel(x, y, color, color, color, 255);
+        }
+    }
 
-            Canvas.render();
-        </script>
-    </body>
+    Canvas.render();
+</script>
+</body>
 </html>

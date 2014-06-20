@@ -1,12 +1,12 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Forebone.Dom example</title>
-        <!-- // <script src="../dist/forebone.min.js"></script> -->
+<head>
+    <meta charset="utf-8">
+    <title>Forebone.Dom example</title>
+    <!-- // <script src="../dist/forebone.min.js"></script> -->
 
-        <!-- for develop mode only -->
-        <script src="../lib/forebone.js"></script>
-        <style type="text/css">
+    <!-- for develop mode only -->
+    <script src="../lib/forebone.js"></script>
+    <style type="text/css">
         * {
             font-family: sans-serif;
             font-size: 6vh;
@@ -19,67 +19,67 @@
         .blue {
             color: #0000fa;
         }
-        </style>
-    </head>
-    <body>
-        <div class="somediv findme">
-            Some div
-        </div>
+    </style>
+</head>
+<body>
+<div class="somediv findme">
+    Some div
+</div>
 
-        <ul class="testlist">
-            <li class="odd findme">test 1</li>
-            <li>test 2</li>
-            <li class="odd">test 3</li>
-            <li class="findme">test 4</li>
-            <li class="odd">test 5</li>
-        </ul>
-        <div class="anotherdiv">
-            Some another DIV - click me to toggle color!
-        </div>
-
-
-        <script>
-            var $ = Forebone.Dom;
-            
-            function changeColor() {
-                // here 'this' == DIV class="anotherdiv", so:
-                this.classList.toggle("blue");
-                //...or by Forebone.Dom.toggleClass:
-                $.toggleClass(".anotherdiv", "red");
-            }
-            
-            // find element DIV class="somediv" and set attribute ID="myNewDiv"
-            var somediv = $.find('.somediv');
-            $.set(somediv, "id", "myNewDiv");
-
-            // as above, but in one line
-            $.set(".anotherdiv", "id", "someAnotherDiv");
-
-            // raw CSS manipulating: add border
-            somediv.style.border = "1px solid #111";
+<ul class="testlist">
+    <li class="odd findme">test 1</li>
+    <li>test 2</li>
+    <li class="odd">test 3</li>
+    <li class="findme">test 4</li>
+    <li class="odd">test 5</li>
+</ul>
+<div class="anotherdiv">
+    Some another DIV - click me to toggle color!
+</div>
 
 
-            // CSS addClass
-            $.addClass(".somediv", "red");
+<script>
+    var $ = Forebone.Dom;
 
-            // CSS onClick toggle class
-            $.addClass(".anotherdiv", "blue");
-            $.on(".anotherdiv", "click", changeColor);
+    function changeColor() {
+        // here 'this' == DIV class="anotherdiv", so:
+        this.classList.toggle("blue");
+        //...or by Forebone.Dom.toggleClass:
+        $.toggleClass(".anotherdiv", "red");
+    }
 
-            //check if contains class
-            console.log($.containClass(".somediv", "red"));
-            console.log($.containClass(".somediv", "green"));
-                
-            // change background of all divs
-            $.forEach('ul.testlist>li.odd', function(item) { 
-                item.style.backgroundColor = "#ce4fad";
-            });
-                     
-            //find all elements with className = "findme"
-            var founded = $.findByClass("findme");
-            console.log(founded.length);
-            console.log(founded);
-            
-        </script>
-    </body>
+    // find element DIV class="somediv" and set attribute ID="myNewDiv"
+    var somediv = $.find('.somediv');
+    $.set(somediv, "id", "myNewDiv");
+
+    // as above, but in one line
+    $.set(".anotherdiv", "id", "someAnotherDiv");
+
+    // raw CSS manipulating: add border
+    somediv.style.border = "1px solid #111";
+
+
+    // CSS addClass
+    $.addClass(".somediv", "red");
+
+    // CSS onClick toggle class
+    $.addClass(".anotherdiv", "blue");
+    $.on(".anotherdiv", "click", changeColor);
+
+    //check if contains class
+    console.log($.containClass(".somediv", "red"));
+    console.log($.containClass(".somediv", "green"));
+
+    // change background of all divs
+    $.forEach('ul.testlist>li.odd', function (item) {
+        item.style.backgroundColor = "#ce4fad";
+    });
+
+    //find all elements with className = "findme"
+    var founded = $.findByClass("findme");
+    console.log(founded.length);
+    console.log(founded);
+
+</script>
+</body>
 </html>
