@@ -1,45 +1,45 @@
-module.exports = function (grunt) {
-	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
-		uglify: {
-			options: {
-				banner: '/*! <%= pkg.name %> build <%= grunt.template.today("dd-mm-yyyy HH:mm") %> */\n'
-			},
-			dist: {
-				src: 'lib/forebone.js',
-				dest: 'dist/forebone.min.js'
-			}
-		},
+module.exports = function(grunt) {
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        uglify: {
+            options: {
+                banner: '/*! <%= pkg.name %> build <%= grunt.template.today("dd-mm-yyyy HH:mm") %> */\n'
+            },
+            dist: {
+                src: 'lib/forebone.js',
+                dest: 'dist/forebone.min.js'
+            }
+        },
 
-		jshint: {
-			files: ['Gruntfile.js', 'lib/**/*.js'],
-			options: {
-				force: true,
-				curly: true,
-				eqeqeq: true,
-				eqnull: true,
-				browser: true,
-				globals: {
-					Forebone: true
-				}
-			}
-		},
+        jshint: {
+            files: ['Gruntfile.js', 'lib/**/*.js'],
+            options: {
+                force: true,
+                curly: true,
+                eqeqeq: true,
+                eqnull: true,
+                browser: true,
+                globals: {
+                    Forebone: true
+                }
+            }
+        },
 
-		qunit: {
-			files: ['test/**/*.html']
-		}
-	});
+        qunit: {
+            files: ['test/**/*.html']
+        }
+    });
 
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-qunit');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-qunit');
 
-	// default - all tasks
-	grunt.registerTask('default', ['jshint', 'qunit', 'uglify']);
+    // default - all tasks
+    grunt.registerTask('default', ['jshint', 'qunit', 'uglify']);
 
-	// test - jshint, testing
-	grunt.registerTask('test', ['jshint', 'qunit']);
+    // test - jshint, testing
+    grunt.registerTask('test', ['jshint', 'qunit']);
 
-	// build - only dist
-	grunt.registerTask('build', ['uglify']);
+    // build - only dist
+    grunt.registerTask('build', ['uglify']);
 };
