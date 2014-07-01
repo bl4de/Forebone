@@ -63,7 +63,14 @@ test("Forebone.Dom test suite", function () {
 
 	equal(_testElem.getAttribute("testattr"), testAttr);
 
+
 	// get new property from DOM node
 	equal(obj.get(elem, "testattr"), testAttr);
+
+
+	// test content()
+	obj.content('.testdiv', "test");
+	var elem = document.getElementsByClassName('testdiv');
+	equal(elem[0].innerHTML, "test");
 
 });
