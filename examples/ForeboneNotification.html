@@ -1,26 +1,26 @@
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <title>Forebone.Media example</title>
-        <script src="forebone.min.js"></script> 
-    </head>
-    
-    <body>
-        <p id="par">
-            Testowy paragraf
-        </p>
-        <input type="button" value="Show Notification" onClick="fnShow();">
-        <script>
-            function fnShow() {
-                var _t = document.getElementById("par");
-                
-                var Msg = Forebone.Notification; 
-				
-				Msg.show("test notification",
-                {"icon" : 'facebook.com'}); 
-			}
-		</script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title>Forebone.Media example</title>
+    <script src="forebone.min.js"></script>
+</head>
+
+<body>
+<p id="par">
+    Testowy paragraf
+</p>
+<input type="button" value="Show Notification" onClick="fnShow();">
+<script>
+    function fnShow() {
+        var _t = document.getElementById("par");
+
+        var Msg = Forebone.Notification;
+
+        Msg.show("test notification",
+                {"icon": 'facebook.com'});
+    }
+</script>
+</body>
 
 </html>

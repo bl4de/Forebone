@@ -1,23 +1,23 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Forebone.Media example</title>
-        <script src="../dist/forebone.min.js"></script>
-    </head>
-    <body>
-        <video id="streaming"></video>
-        <script>
-            var Streaming = Forebone.Media;
-            var Dom = Forebone.Dom;
+<head>
+    <meta charset="utf-8">
+    <title>Forebone.Media example</title>
+    <script src="../dist/forebone.min.js"></script>
+</head>
+<body>
+<video id="streaming"></video>
+<script>
+    var Streaming = Forebone.Media;
+    var Dom = Forebone.Dom;
 
-            var options = {
-                video: true,
-                audio: false,
-                videoDomElement: Dom.find("#streaming")
-            };
+    var options = {
+        video: true,
+        audio: false,
+        videoDomElement: Dom.find("#streaming")
+    };
 
-            Streaming.getMedia(options);
+    Streaming.getMedia(options);
 
-        </script>
-    </body>
+</script>
+</body>
 </html>

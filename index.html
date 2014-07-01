@@ -1,17 +1,31 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>training</title>
-        <meta charset="UTF-8">
-        <script src="lib/forebone.js"></script>
-    </head>
-    <body>
-        <script>
-            console.log(Forebone.Util.random(1000));
-        </script>
-    </body>
+<head>
+    <title>training</title>
+    <meta charset="UTF-8">
+    <script src="lib/forebone.js"></script>
+</head>
+<body>
+<p class="paragraph">
+    Test paragraph
+<ul class="list3">
+    <li>ala</li>
+    <li>ma</li>
+    <li>kota</li>
+</ul>
+</p>
+<script>
+    var $ = Forebone.Dom,
+            paragraph = $.find('.paragraph'),
+            list = $.findAll('li'),
+            iterator = 1;
+
+    $.forEach(list, function (li) {
+        $.content(li, "list item " + iterator++);
+    });
+
+
+    //    console.log(Forebone.Util.random(1000));
+</script>
+</body>
 </html>
